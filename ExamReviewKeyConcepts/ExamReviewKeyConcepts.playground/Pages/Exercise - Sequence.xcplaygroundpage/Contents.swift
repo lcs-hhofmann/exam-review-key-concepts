@@ -33,23 +33,46 @@ canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 400, height: 600)
 
 // circle loop
 canvas.drawShapesWithFill = false
-for x in stride(from: 200, to: 350, by: 150) {
-    
-    //if statement to make the first circle red and the second blue
-    
-    if x > 300 {
-        
-        canvas.borderColor = Color.init(hue: 355, saturation: 100, brightness: 99, alpha: 100)
-        
-    } else if x < 300 {
-        
-        canvas.borderColor = Color.init(hue: 205, saturation: 57, brightness: 100, alpha: 75)
+for x in stride(from: 200, through: 350, by: 150) {
+
+//    if statement to make the first circle red and the second blue
+
+    if x < 300 {
+
+        canvas.borderColor = Color.init(hue: 355, saturation: 100, brightness: 99, alpha: 80)
+
+    } else if x > 300 {
+
+        canvas.borderColor = Color.init(hue: 206, saturation: 82, brightness: 79, alpha: 75)
     }
+
+//    draw the circles with a large border width
+
+    canvas.drawEllipse(centreX: x, centreY: 200, width: 275, height: 275, borderWidth: 100)
     
-    //draw the circles with a large border width
-    
-    canvas.drawEllipse(centreX: x, centreY: 200, width: 75, height: 75, borderWidth: 100)
 }
+
+//draw jesus title
+
+    canvas.drawText(message: "the jesus", size: 40, x: 10, y: 440, kerning: -0.5)
+    canvas.drawText(message: "and mary chain", size: 40, x: 10, y: 400, kerning: -0.5)
+
+// date text
+
+    canvas.drawText(message: "friday", size: 11, x: 10, y: 570, kerning: -0.5)
+    canvas.drawText(message: "december 4 1987", size: 11, x: 10, y: 555, kerning: -0.5)
+    canvas.drawText(message: "8 pm show", size: 11, x: 10, y: 540, kerning: -0.5)
+
+// who's playing text
+
+    canvas.drawText(message: "with", size: 11, x: 120, y: 570, kerning: -0.5)
+    canvas.drawText(message: "social distortion", size: 11, x: 120, y: 555, kerning: -0.5)
+    canvas.drawText(message: "and opal", size: 11, x: 120, y: 540, kerning: -0.5)
+
+// where it is
+    canvas.drawText(message: "hollywood palladium", size: 11, x: 270, y: 570, kerning: -0.5)
+    canvas.drawText(message: "6215 sunset blvd.", size: 11, x: 270, y: 555, kerning: -0.5)
+    canvas.drawText(message: "los angeles, california", size: 11, x: 270, y: 540, kerning: -0.5)
 
 
 
