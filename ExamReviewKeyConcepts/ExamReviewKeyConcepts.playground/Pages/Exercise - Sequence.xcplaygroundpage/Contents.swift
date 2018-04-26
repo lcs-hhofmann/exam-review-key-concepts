@@ -27,15 +27,30 @@ let canvas = Canvas(width: 400, height: 600)
 // HINT: Remember that all shapes have a fill and a border.
 //       You can turn off the fill or border if desired.
 
-// No border, has a fill
-canvas.drawShapesWithBorders = false
-canvas.drawShapesWithFill = true
-canvas.drawEllipse(centreX: 100, centreY: 100, width: 50, height: 75)
+//draw the background
+canvas.fillColor = Color.init(hue: 210, saturation: 1, brightness: 82, alpha: 100)
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 400, height: 600)
 
-// Has a border, no fill
-canvas.drawShapesWithBorders = true
+// circle loop
 canvas.drawShapesWithFill = false
-canvas.drawEllipse(centreX: 200, centreY: 100, width: 50, height: 75)
+for x in stride(from: 200, to: 350, by: 150) {
+    
+    //if statement to make the first circle red and the second blue
+    
+    if x > 300 {
+        
+        canvas.borderColor = Color.init(hue: 355, saturation: 100, brightness: 99, alpha: 100)
+        
+    } else if x < 300 {
+        
+        canvas.borderColor = Color.init(hue: 205, saturation: 57, brightness: 100, alpha: 75)
+    }
+    
+    //draw the circles with a large border width
+    
+    canvas.drawEllipse(centreX: x, centreY: 200, width: 75, height: 75, borderWidth: 100)
+}
+
 
 
 /*:
